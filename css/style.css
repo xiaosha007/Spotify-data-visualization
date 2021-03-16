@@ -1,0 +1,402 @@
+
+
+/**** ADD YOUR STYLES ****/
+
+
+/****************/
+/*   BAR-CHART  */
+/****************/
+
+.bar {
+  fill: #3C948B;
+}
+.logo{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width:16vw;
+  height:6vw; /* <-- 3 x width */
+  margin:0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.bar:hover {
+  fill: #327972;
+}
+
+#chart-area text {
+  font-size: 11px;
+}
+
+.axis-label {
+  fill: #888;
+  font-size: 10px;
+}
+
+h1{
+  color: purple;
+}
+
+body{
+  background-color: black;
+  color: white;
+}
+
+.container {
+  padding:5px;
+  padding-bottom: 10px;
+}
+
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+	fill: none;
+	pointer-events: all;
+}
+
+.toolTip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6F257F;
+  padding: 14px;
+  text-align: center;
+  color:black;
+}
+
+.background-line{
+  background: white;
+}
+
+.lineHoverText{
+  opacity: 1;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgb(0,0,0,0.7);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 5px solid #888;
+  border-radius: 10px;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.filtercontainer {
+  text-align: left;
+  padding: 15px;
+  right:1vw;
+  top: 1vw;
+  margin:0 auto;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1em;
+  width: 15vw; 
+  height: auto;
+  color: rgb(27, 19, 19);
+  display: inline-block;
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.slidecontainer{
+  font-size: 20px;
+  margin-top: 10%;
+}
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 5px;
+  border-radius: 5px; 
+  background: #d3d3d3;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  background: rgb(185, 60, 185);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(185, 60, 185);
+  cursor: pointer;
+} 
+
+
+/* sticky */
+
+.et-hero-tabs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: #000;
+  text-align: center;
+  padding: 0 2em;
+  z-index: 1;
+}
+
+
+ .et-slide {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ position: relative;
+ background: #000;
+ text-align: center;
+ padding: 0 2em;
+}
+.et-slide-multiple {
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+position: relative;
+background: #000;
+text-align: center;
+padding: 1em 2em;
+}
+.et-hero-tabs h1, .et-slide h1,.et-slide-multiple h1 {
+ font-size: 2rem;
+   color: #fff;
+ margin: 0;
+}
+.et-hero-tabs h3, .et-slide h3,.et-slide-multiple h3 {
+ font-size: 1.5rem;
+ letter-spacing: 0.1rem;
+   color: #fff;
+ /* opacity: 0.8; */
+}
+.et-hero-tabs-container {
+ display: flex;
+ flex-direction: row;
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ height: 70px;
+ box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+ background: #fff;
+ z-index: 10;
+}
+.et-hero-tabs-container--top {
+ position: fixed;
+ top: 0;
+}
+.et-hero-tab {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex: 1;
+ color: #000;
+ letter-spacing: 0.1rem;
+ transition: all 0.5s ease;
+ font-size: 0.9rem;
+}
+.et-hero-tab:hover {
+ text-decoration: none;
+ color: rgb(0, 0, 0);
+ background: #b3b3b3;
+ letter-spacing: 0.2rem;
+ transition: all 0.5s ease;
+}
+.et-hero-tab-slider {
+ position: absolute;
+ bottom: 0;
+ width: 0;
+ height: 6px;
+ background: #20b153;
+ transition: left 0.3s ease;
+}
+@media (min-width: 800px) {
+ .et-hero-tabs h1, .et-slide h1,.et-slide-multiple h1 {
+   font-size: 3rem;
+}
+ .et-hero-tabs h3, .et-slide h3,.et-slide-multiple h3 {
+   font-size: 1.4rem;
+       opacity: 0.8;
+}
+ .et-hero-tab {
+   font-size: 1rem;
+}
+}
+.legend {
+font-family: 'Raleway', sans-serif;
+fill: #FFFFFF;
+}
+.outterdiv {
+height: auto;
+width: auto;
+margin: 0px auto;
+padding: 1px;
+position: relative; 
+}
+.lefttable {
+/* background-color: #79e75e; */
+left:1vw;
+top: 1vw;
+position: absolute;
+}
+.righttable{
+/* background-color: #5e7ee7; */
+right:11vw;
+top: 1vw;
+margin:0 auto;
+position: absolute;
+}
+.btn1 {
+border-radius: 5px;
+background-color: #9c9c9c;
+border: none;
+color: #FFFFFF;
+text-align: center;
+font-size: 15px;
+padding: 6px;
+min-width: 5vw;
+padding: 5%;
+/* width: 8vw; */
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.filter1,.filter2,.filter3,.filter4 {
+color: #fff;
+display: none;
+
+}
+
+/* bootstrap-select */
+.bootstrap-select {
+  max-width: 12vw;
+}
+.bootstrap-select .btn {
+  border-style: solid;
+  border-left-width: 3px;
+  border-left-color: #00DDDD;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  font-weight: 200;
+  padding: 12px 12px;
+  font-size: 16px;
+  margin-bottom: 1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  /* for IE 11 */
+  display: none;
+}
+
+
+/* button design  */
+.button {
+border-radius: 5px;
+background-color: #20b153;
+border: none;
+color: #FFFFFF;
+text-align: center;
+font-size: 16px;
+padding: 6px;
+min-width: 5vw;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+.button:hover{
+opacity: 0.5;
+}
+.button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.button span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.button:hover span {
+padding-right: 25px;
+}
+
+.button:hover span:after {
+opacity: 1;
+right: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+

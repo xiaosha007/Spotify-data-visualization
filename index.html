@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Spotify dataset</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<!-- Load CSS files -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/spinner.css">
+	<!-- Optional JavaScript -->
+	<script src="https://d3js.org/d3-path.v1.min.js" charset="utf-8"></script>
+	<script src= "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> 
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+	
+</head>
+<body>
+
+	<section class="et-hero-tabs" id="toptab">
+
+			<img src="59b5bb466dbe923c39853e00.png" alt="Spotify" class='logo'/>
+			<h1>What happened in the music world over the years?</h1>
+
+
+		<div class="et-hero-tabs-container">
+			<a class="et-hero-tab" href="#tab-year" id="yearFilter" title="Click again to show/hide filter">Popularity</a>
+			<a class="et-hero-tab" href="#tab-characteristic" id="otherFilter1" title="Click again to show/hide filter">Audio Characteristics</a>
+			<a class="et-hero-tab" href="#tab-artist" id="otherFilter2" title="Click again to show/hide filter">Properties Distribution</a>
+			<a class="et-hero-tab" href="#tab-angular" id="otherFilter3" title="Click again to show/hide filter">Artist Analysis</a>		
+			<span class="et-hero-tab-slider"></span>
+		</div>
+		 
+	</section>
+
+	<main class="et-main">
+		<section class="et-slide" id="tab-year">
+			<div id="filter1">
+				<div class="filtercontainer">
+					Filter by:
+					<hr>
+					<div class="slidecontainer">
+						<span id="year"></span>
+						<input type="range" min="1920" max="2020" value="2020" class="slider" id="myRange">		
+					</div>
+					<button class="button" id ="topN_showAllYears"><span>Show all songs</span></button>
+
+					<hr>
+					<label>Display by</label>
+					<select class="selectpicker" id="artistOrYear" style="width: 100px;">
+						<option id="artist">Artist</option>
+						<option id="song">Songs</option>
+					</select>
+					<hr>
+					<label>Top Results</label>
+					<input type="number" min="1" max="100" value="20" id="nTopResult">
+					<br>
+
+				</div>
+			</div>
+
+			<h3 id="top10Title">Top 20 Artists based on Popularity in Year 2020</h3>
+			<div class="container">
+					<div id="topNartists"></div>
+				<!-- Parent container for the scatterplot -->
+			</div>
+			
+		</section>
+		<section class="et-slide" id="tab-characteristic">
+			<h3>Audio Characteristic Over the year</h3>
+			<div id="musicproperties"></div>
+			<div id="filter2">
+				<div class="filtercontainer">
+					Filter by:
+					<hr>
+					Animation<br>
+					<button class="button" id ="start"><span>Play</span></button>
+					<button class="button" id ="reset"><span>Reset</span></button>
+				</div>
+			</div>
+		</section>
+		<section class="et-slide" id="tab-artist">
+			<h3>Distribution of Audio Properties</h3>
+			<div id="propertiesDist"></div>
+			<div id="filter3">
+				<div class="filtercontainer">
+					Filter by:
+					<hr>
+					<label>Audio Properties</label>
+					<select name="propertiesSelection" id="propertiesSelection"></select>
+					<br>
+					<hr>
+					<label>Number of bins</label>
+  					<input type="number" min="1" max="100" value="100" id="nBin">
+				</div>
+			</div>
+		</section>
+		<section class="et-slide-multiple" id="tab-angular">
+			<h3>Artists analysis</h3>
+			<div class="outterdiv">
+				<div class="lefttable" id="radarChart2"></div>
+				<div class="righttable" id="songCount"></div>
+			</div>
+
+			
+			<div id="filter4">
+				<div class="filtercontainer">
+					Filter by:
+					<hr>
+					<label>Artists from Year</label>
+					<input type="number" placeholder="YYYY" min="1920" max="2020" value="2020" id="artistsYear">
+					<hr>
+					<label>Artists</label>
+					<select class="selectpicker" multiple id="artistsSelection"></select>
+					<ul></ul>
+					<button class="btn1" id ="reset1"><span>Clean input</span></button>
+					<hr>
+					<button class="button" id ="artist_allYearCheck"><span>Show all songs</span></button>
+				</div>
+			</div>
+		</section>
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content" style="text-align: center;">
+			  <span class="close" id="closeSongDetails">&times;</span>
+			  <h3 id="modalTitle">Song lists</h3>
+			  <p id="songDetailsText">Some text in the Modal..</p>
+			</div>
+		  
+		</div>
+	</main>
+	
+
+	</div>
+
+
+	
+	<!-- Load JS libraries: jQuery, D3 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+	
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<!-- <script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script> -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+	<!-- new code here -->
+	
+	<script src="js/Navigation.js"></script>
+
+	<!-- Scatterplot implementation -->
+	<script src="js/scatterplot.js"></script>
+	<script src="js/top10artists.js"></script>
+	<script src="js/linegraph.js"></script>
+	<!-- <script src="js/bubbleChart.js"></script> -->
+	<script src="js/songCount.js"></script>
+	<script src="js/propertiesDist.js"></script>
+	<script src="js/radarChart.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
