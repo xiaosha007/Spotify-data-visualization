@@ -9,6 +9,6 @@ The dataset is obtained via https://www.kaggle.com/yamaerenay/spotify-dataset-19
 Since all of our team members are avid fans of music, we are delighted to perform analysis and visualization on the music data provided by Spotify from the year 1921 to 2020 and find interesting insights from our favourite artists. 
 
 ## Screenshots of application
-<img src='images/1.png' width=800 height=400>
-<img src='images/2.png' width=800 height=400>
-<img src='images/3.png' width=800 height=400>
+<img src='images/1.png' width=600 height=350>
+<img src='images/2.png' width=600 height=350>
+<img src='images/3.png' width=600 height=350>
