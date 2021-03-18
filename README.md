@@ -12,3 +12,7 @@ Since all of our team members are avid fans of music, we are delighted to perfor
 <img src='images/1.png' width=600 height=350>
 <img src='images/2.png' width=600 height=350>
 <img src='images/3.png' width=600 height=350>
+
+## Notes
+You have to run the index.html by setting up your own server, it can be either a localhost or any hosting service like heroku.
+If you are facing any issue, do create an issue and I will look at it. Thanks.
